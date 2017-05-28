@@ -1,0 +1,11 @@
+body {
+  padding-top: 50px;
+  margin-bottom: 40px;
+  font-family: 'PT Mono', monospace;
+}
+.jumbotron {
+  text-align: center;
+  font-family: 'Londrina Outline', cursive;
+  background-color: #0054a8;
+  color: white;
+}

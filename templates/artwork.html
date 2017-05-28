@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}
+	Ben Edmunds | Work
+{% endblock %}
+						
+{% block content %}
+
+<div class="container middle">
+{% for Artwork in Artworks %}
+	<div class="col-md-4">
+		{% thumbnail Artwork.image "x300" as im %}
+			<a href="{% url 'artwork_detail' pk=Artwork.pk %}"><img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image"></a>
+		{% endthumbnail %}
+		<h4>{{ Artwork }}</h4>
+	</div>
+{% endfor %}
+</div>
+
+{% endblock %}
