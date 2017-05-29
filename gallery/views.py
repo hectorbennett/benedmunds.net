@@ -9,3 +9,7 @@ def artwork(request):
 def artwork_detail(request, pk):
 	Work = Artwork.objects.get(pk=pk)
 	return render(request, 'artwork_detail.html', {'Work': Work})
+
+def artwork_fullscreen(request, pk):
+	Work = Artwork.objects.get(pk=pk)
+	return render(request, 'artwork_fullscreen.html', {'Work': Work})

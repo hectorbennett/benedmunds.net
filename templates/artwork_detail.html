@@ -17,8 +17,9 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-6 pull-left">
+			
 			{% thumbnail Work.image "x780" as im %}
-				<img src="{{ im.url }}" class="img-responsive" alt="{{ Work }}">
+				<a href="{% url 'artwork_fullscreen' pk=Work.pk %}"><img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="{{ Artwork }}"></a>
 			{% endthumbnail %}
 		</div>
 		
