@@ -3,20 +3,25 @@
 {% load thumbnail %}
 
 {% block title %}
-	Ben Edmunds | Work
+	Ben Edmunds | Artwork
 {% endblock %}
 						
 {% block content %}
 
 <div class="container middle">
-{% for Artwork in Artworks %}
-	<div class="col-md-4">
-		{% thumbnail Artwork.image "x300" as im %}
-			<a href="{% url 'artwork_detail' pk=Artwork.pk %}"><img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image"></a>
-		{% endthumbnail %}
-		<h4>{{ Artwork }}</h4>
+	<h1>Artwork</h1>
+	<div class="row art-row">
+	{% for Artwork in Artworks %}
+		<div class="col-md-4 col-sm-6 col-xs-12 artbox">
+			{% thumbnail Artwork.image "x780" as im %}
+				<a href="{% url 'artwork_detail' pk=Artwork.pk %}"><img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="{{ Artwork }}"></a>
+			{% endthumbnail %}
+			<h5>{{ Artwork }}</h5>
+		</div>
+	{% endfor %}
 	</div>
-{% endfor %}
 </div>
 
 {% endblock %}
+
+

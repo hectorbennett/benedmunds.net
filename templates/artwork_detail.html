@@ -3,45 +3,45 @@
 {% load thumbnail %}
 
 {% block title %}
-	Ben Edmunds | Work
+	Ben Edmunds | {{ Work }}
 {% endblock %}
 						
 {% block content %}
 
 <div class="container middle">
-
 	<div class="row">
-		<div class="col-md-6">
-			{% thumbnail Work.image "x500" as im %}
-				<img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image">
+		<div class="col-xs-12 col-sm-6 pull-right">
+				<h2>{{ Work }}</h2>
+				<h5>{{ Work.medium }}, {{ Work.height }}x{{ Work.width }}cm</h5>
+				<h5>{{ Work.date_created }}</h5>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 pull-left">
+			{% thumbnail Work.image "x780" as im %}
+				<img src="{{ im.url }}" class="img-responsive" alt="{{ Work }}">
 			{% endthumbnail %}
 		</div>
-		<div class="col-md-6">
-			<div class="row">
-				<h1>{{ Work }}</h1>
-				<p>{{ Work.medium }}</p>
-				<p>{{ Work.height }}x{{ Work.width }}cm</p>
-				<p>{{ Work.description }}</p>
-			</div>
-
-			<div class="row">
-				<div class="col-md-3">
-					{% thumbnail Work.alt_image_1 "x300" as im %}
-						<img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image">
-					{% endthumbnail %}
-				</div>
-				<div class="col-md-3">
-					{% thumbnail Work.alt_image_2 "x300" as im %}
-						<img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image">
-					{% endthumbnail %}
-				</div>
-				<div class="col-md-3">
-					{% thumbnail Work.alt_image_3 "x300" as im %}
-						<img src="{{ im.url }}" class="img-responsive" class="img-thumbnail" alt="Responsive image">
-					{% endthumbnail %}
-				</div>
-			</div>
-			
+		
+		<div class="col-xs-12 col-sm-6 pull-right">
+				<blockquote class="blockquote-reverse">
+					{{ Work.description }}
+				</blockquote>
+		</div>
+		
+		<div class="col-xs-3 col-sm-2 pull-right">
+			{% thumbnail Work.alt_image_1 "x780" as im %}
+				<img src="{{ im.url }}" class="img-responsive" alt="{{ Work }}">
+			{% endthumbnail %}
+		</div>
+		<div class="col-xs-3 col-sm-2 pull-right">
+			{% thumbnail Work.alt_image_2 "x780" as im %}
+				<img src="{{ im.url }}" class="img-responsive" alt="{{ Work }}">
+			{% endthumbnail %}
+		</div>
+		<div class="col-xs-3 col-sm-2 pull-right">
+			{% thumbnail Work.alt_image_3 "x780" as im %}
+				<img src="{{ im.url }}" class="img-responsive" alt="{{ Work }}">
+			{% endthumbnail %}
 		</div>
 	</div>
 

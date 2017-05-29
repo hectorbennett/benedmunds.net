@@ -1,6 +1,6 @@
 body {
 	font-family: 'PT Sans', sans-serif;
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 .navbar {
@@ -43,6 +43,51 @@ body {
 		    box-shadow: 0px 0px 300px 0px rgba(0,0,0,0.4);
 }
 
+
+.art-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.artbox {
+	padding-bottom: 60px;
+}
+
+.detail-information {
+	padding-left: 60px;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.bottom-align {
+	display: flex;
+    align-items: bottom;
+}
+
+.thumbnail img{
+    max-width: 100%; /* do not stretch the bootstrap column */
+}
+
+.img-wrapper{
+	width: 100%;
+	padding-bottom: 150%; /* your aspect ratio here! */
+	position: relative;
+}
+
+.img-wrapper img{
+	position: absolute;
+	top: 0; 
+	bottom: 0; 
+	left: 0; 
+	right: 0;
+	min-height: 100%; /* optional: if you want the smallest images to fill the .thumbnail */
+}
 
 @media (min-width: 900px) {
     .container{

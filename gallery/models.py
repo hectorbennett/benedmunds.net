@@ -25,7 +25,7 @@ class Artwork(models.Model):
 	width = models.IntegerField()
 	description = models.TextField()
 	date_created = models.DateField()
-	date_published = models.DateTimeField(blank=True, null=True)
+	date_published = models.DateTimeField(blank=True, null=True,)
 	album = models.ForeignKey(Album)
 	
 	def publish(self):
